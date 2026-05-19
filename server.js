@@ -452,6 +452,7 @@ async function handleRequest(req, res) {
 }
 
 export { handleRequest };
+export default handleRequest;
 
 const server = http.createServer((req, res) => {
   void handleRequest(req, res).catch((error) => {
