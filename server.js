@@ -451,12 +451,16 @@ async function handleRequest(req, res) {
   sendJson(res, 404, { error: "Not found." });
 }
 
+export { handleRequest };
+
 const server = http.createServer((req, res) => {
   void handleRequest(req, res).catch((error) => {
     sendJson(res, 500, { error: error instanceof Error ? error.message : "Unexpected server error." });
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`ani-cli backend listening on http://localhost:${PORT}`);
-});
+if (!process.env.VERCEL) {
+  server.listen(PORT, () => {
+    console.log(`ani-cli backend listening on http://localhost:${PORT}`);
+  });
+}
