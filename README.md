@@ -1,6 +1,6 @@
 # Ani-cli backend
 
-This folder contains a small Node server that mirrors the ani-cli AllAnime flow.
+This repo contains a small Node server that mirrors the ani-cli flow.
 
 ## Endpoints
 
